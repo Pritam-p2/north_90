@@ -155,7 +155,7 @@ GOOGLE_AUTH_URL = "https://accounts.google.com/o/oauth2/auth"
 GOOGLE_FILES_URL = "https://www.googleapis.com/drive/v3/files"
 
 
-CLIENT_SECRETS_FILE = os.path.join(BASE_DIR, "Google", "client_secret.json")
+CLIENT_SECRETS_FILE = os.path.join(BASE_DIR,"client_secret.json")
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
