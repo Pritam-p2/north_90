@@ -1,6 +1,7 @@
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+from datetime import timedelta
 
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,15 +26,14 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "django.contrib.sites",
     'rest_framework',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'rest_framework_simplejwt',
 
     'user'
 ]
@@ -149,3 +149,21 @@ GOOGLE_REDIRECT_URI = "http://localhost:8000/auth/google/callback/"
 GOOGLE_DRIVE_SCOPE = "https://www.googleapis.com/auth/drive.file"
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
+GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token"
+GOOGLE_USER_INFO_URL = "https://www.googleapis.com/oauth2/v2/userinfo"
+GOOGLE_AUTH_URL = "https://accounts.google.com/o/oauth2/auth"
+GOOGLE_FILES_URL = "https://www.googleapis.com/drive/v3/files"
+
+
+CLIENT_SECRETS_FILE = os.path.join(BASE_DIR, "Google", "client_secret.json")
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ]
+}
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "UPDATE_LAST_LOGIN": False
+}    

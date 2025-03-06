@@ -1,23 +1,16 @@
 from django.urls import path, include
 from .views import google_login, google_callback
+from user.views import drive_Callback
+
 
 urlpatterns = [
-    path("accounts/", include("allauth.urls")),
+    path("drive/", include("user.urls")),
     path("auth/google/signin/", google_login, name="google_login"),
     path("auth/google/callback/", google_callback, name="google_callback"),
+
+
+    # path("google/drive_access/", get_google_drive_access),
+    path("google/drive_access/callback/", drive_Callback),
+
+    # path("list/files/", list_google_drive_files),
 ]
-
-# client secret
-# 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
-
-# client id
-# 817203850416-vspdda44e1piv8t34i9eqmrjloh9p5uc.apps.googleusercontent.com
-
-# policy
-# https://chatgpt.com/canvas/shared/67c69d05dc408191bcb66763e8381552
-
-
-# https://localhost:8000/privacy_policy/
-
-# google picker api key
-# AIzaSyAnWWn1YC9yy-8ctZNQlbRvJkgEL8Uv0ZA
