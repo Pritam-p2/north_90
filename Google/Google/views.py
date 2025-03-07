@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.shortcuts import redirect
 from rest_framework.response import Response
 import urllib.parse
-from Google.settings import GOOGLE_CLIENT_ID, GOOGLE_REDIRECT_URI, GOOGLE_CLIENT_SECRET, GOOGLE_DRIVE_SCOPE, GOOGLE_TOKEN_URL, GOOGLE_USER_INFO_URL, GOOGLE_AUTH_URL, GOOGLE_FILES_URL
+from Google.settings import GOOGLE_CLIENT_ID, GOOGLE_REDIRECT_URI, GOOGLE_CLIENT_SECRET, GOOGLE_TOKEN_URL, GOOGLE_USER_INFO_URL, GOOGLE_AUTH_URL
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 from user.models import User

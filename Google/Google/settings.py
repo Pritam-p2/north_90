@@ -144,7 +144,7 @@ SITE_ID = 1
 # ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 
-GOOGLE_REDIRECT_URI = "http://localhost:8000/auth/google/callback/"
+GOOGLE_REDIRECT_URI = "https://web-production-8c0e9.up.railway.app/auth/google/callback/"
 
 GOOGLE_DRIVE_SCOPE = "https://www.googleapis.com/auth/drive.file"
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")

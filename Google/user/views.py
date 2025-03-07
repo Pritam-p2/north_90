@@ -10,7 +10,7 @@ from rest_framework.decorators import api_view
 flow = Flow.from_client_secrets_file(
     CLIENT_SECRETS_FILE,
     scopes=GOOGLE_DRIVE_SCOPE,
-    redirect_uri="http://localhost:8000/google/drive_access/callback/"
+    redirect_uri="https://web-production-8c0e9.up.railway.app/google/drive_access/callback/"
 )
 
 
